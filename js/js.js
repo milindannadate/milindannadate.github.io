@@ -89,28 +89,7 @@ jQuery(document).ready(function() {
         });
     }, { offset: '50%', triggerOnce: true });
 
-
-    /* ==========================================================================
-    MailChimp
-    ========================================================================== */
-    function mailchimpCallback(response) {
-        jQuery('form#newsletter-form .nesto-response').show();
-        if (response.result === 'success') {
-            jQuery('form#newsletter-form input').val('');
-            jQuery('.nesto-response').html('Please check your e-mail to complete the subscription');
-        } else if (response.result === 'error') {
-            jQuery('.nesto-response').html('Please enter unsubscribed / valid e-mail address');
-        }
-    }
-    jQuery('form#newsletter-form input').focus(function() {
-        jQuery('form#newsletter-form .nesto-response').hide();
-    });
-    jQuery('#newsletter-form').ajaxChimp({
-        callback: mailchimpCallback,
-        url: 'http://nestolab.us8.list-manage1.com/subscribe/post?u=1bb0930eeb3f8c90f187eb8ac&id=52e0f44deb'
-    });
-
-
+    
     /* ==========================================================================
     Fancy Box
     ========================================================================== */
