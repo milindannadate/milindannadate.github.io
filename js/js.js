@@ -2,11 +2,14 @@
 /* ==========================================================================
 Document Ready Function
 ========================================================================== */
-jQuery(document).ready(function () {
+jQuery(document).ready(function() {
 
     'use strict';
 
     var onMobile, myVal, myCircle, OBTimerO, OBTimerC, portfoliostack;
+
+
+    jQuery('.copyyear').html(new Date().getFullYear());
 
     /* ==========================================================================
     Placeholder
@@ -17,15 +20,15 @@ jQuery(document).ready(function () {
     /* ==========================================================================
     Open / Close Menu
     ========================================================================== */
-    jQuery('#open-button').on('click', function () {
+    jQuery('#open-button').on('click', function() {
         jQuery('body').toggleClass('over-menu');
-        OBTimerO = setTimeout(function () {
+        OBTimerO = setTimeout(function() {
             jQuery('body').toggleClass('show-menu');
         }, 50);
     });
-    jQuery('#top-content-overlayer').on('click', function () {
+    jQuery('#top-content-overlayer').on('click', function() {
         jQuery('body').removeClass('over-menu');
-        OBTimerC = setTimeout(function () {
+        OBTimerC = setTimeout(function() {
             jQuery('body').removeClass('show-menu');
         }, 50);
     });
@@ -42,7 +45,7 @@ jQuery(document).ready(function () {
     /* ==========================================================================
     Scroll To Section
     ========================================================================== */
-    jQuery('a.scrolltosection').on('click', function (event) {
+    jQuery('a.scrolltosection').on('click', function(event) {
         event.preventDefault();
     });
 
@@ -50,8 +53,8 @@ jQuery(document).ready(function () {
     /* ==========================================================================
     Scroll To Top
     ========================================================================== */
-    jQuery('a.scrollto').on('click', function () {
-        jQuery('html, body').animate({scrollTop: '0'}, 1700);
+    jQuery('a.scrollto').on('click', function() {
+        jQuery('html, body').animate({ scrollTop: '0' }, 1700);
         return false;
     });
 
@@ -60,7 +63,7 @@ jQuery(document).ready(function () {
     Personal Title
     ========================================================================== */
     jQuery('#personal-typed').typed({
-        strings: ['Web Designer & Front-end Developer', 'Exclusive Author at Envato', 'CEO at NestoLab'],
+        strings: ['UI & Front-end Developer', '13 year\'s of experience in web industry', 'HTML/HTML5, CSS/CSS3, jQuery / JavaScript with expertise'],
         loop: true,
         typeSpeed: 30,
         backDelay: 2000,
@@ -71,8 +74,8 @@ jQuery(document).ready(function () {
     /* ==========================================================================
     Skill Chart
     ========================================================================== */
-    jQuery('.skills').waypoint(function () {
-        jQuery('.skills').each(function () {
+    jQuery('.skills').waypoint(function() {
+        jQuery('.skills').each(function() {
             var getid = jQuery(this).attr('id');
             myVal = jQuery(this).attr("data-rel");
             myCircle = Circles.create({
@@ -81,7 +84,7 @@ jQuery(document).ready(function () {
                 radius: 85,
                 value: myVal,
                 duration: 2000,
-                text: function (value) {return value; }
+                text: function(value) { return value; }
             });
         });
     }, { offset: '50%', triggerOnce: true });
@@ -99,7 +102,7 @@ jQuery(document).ready(function () {
             jQuery('.nesto-response').html('Please enter unsubscribed / valid e-mail address');
         }
     }
-    jQuery('form#newsletter-form input').focus(function () {
+    jQuery('form#newsletter-form input').focus(function() {
         jQuery('form#newsletter-form .nesto-response').hide();
     });
     jQuery('#newsletter-form').ajaxChimp({
@@ -131,11 +134,11 @@ jQuery(document).ready(function () {
     /* ==========================================================================
     Numbers
     ========================================================================== */
-    jQuery('.box-numbers [data-to]').each(function () {
+    jQuery('.box-numbers [data-to]').each(function() {
         var $this = jQuery(this);
-        $this.waypoint(function () {
-            $this.countTo({speed: 100});
-        }, {offset: '75%', triggerOnce: true });
+        $this.waypoint(function() {
+            $this.countTo({ speed: 100 });
+        }, { offset: '75%', triggerOnce: true });
     });
 
 
@@ -220,20 +223,20 @@ jQuery(document).ready(function () {
     /* ==========================================================================
     on mobile ?
     ========================================================================== */
-	onMobile = false;
+    onMobile = false;
     if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent)) { onMobile = true; }
 
-	if (onMobile === true) {
+    if (onMobile === true) {
 
         /* ==========================================================================
         Remove Parallax
         ========================================================================== */
-        jQuery('.parallax-image #home-section').css({backgroundAttachment: 'scroll'});
-        jQuery('#alternative-home-section').css({backgroundAttachment: 'scroll'});
-        jQuery('#skills-section').css({backgroundAttachment: 'scroll'});
-        jQuery('#subscribe-section').css({backgroundAttachment: 'scroll'});
-        jQuery('#testimonials-section').css({backgroundAttachment: 'scroll'});
-        jQuery('#numbers-section').css({backgroundAttachment: 'scroll'});
+        jQuery('.parallax-image #home-section').css({ backgroundAttachment: 'scroll' });
+        jQuery('#alternative-home-section').css({ backgroundAttachment: 'scroll' });
+        jQuery('#skills-section').css({ backgroundAttachment: 'scroll' });
+        jQuery('#subscribe-section').css({ backgroundAttachment: 'scroll' });
+        jQuery('#testimonials-section').css({ backgroundAttachment: 'scroll' });
+        jQuery('#numbers-section').css({ backgroundAttachment: 'scroll' });
 
         /* ==========================================================================
         Smooth Scroll
@@ -247,8 +250,8 @@ jQuery(document).ready(function () {
         /* ==========================================================================
         okvideo
         ========================================================================== */
-        jQuery('.video-background #home-section').css({backgroundSize: 'cover'});
-        jQuery('.video-background #home-section').css({background: 'url(images/background/homebg.jpg) center center'});
+        jQuery('.video-background #home-section').css({ backgroundSize: 'cover' });
+        jQuery('.video-background #home-section').css({ background: 'url(images/background/homebg.jpg) center center' });
 
     } else {
 
@@ -270,7 +273,7 @@ jQuery(document).ready(function () {
         /* ==========================================================================
         okvideo
         ========================================================================== */
-        jQuery(function () {
+        jQuery(function() {
             jQuery('.video-background #home-section').okvideo({
                 hd: true,
                 volume: 0,
@@ -288,15 +291,15 @@ jQuery(document).ready(function () {
     /* ==========================================================================
     Supersized Slider
     ========================================================================== */
-    jQuery(function ($) {
+    jQuery(function($) {
         $('.image-slider #home-section').supersized({
-            slide_interval : 5000, // Length between transitions
-            transition : 1,
-            transition_speed : 900, // Speed of transition
-            slide_links : '0',
-            slides : [
-                {image : 'images/slider/001.jpg', title : '', thumb : '', url : ''},
-                {image : 'images/slider/002.jpg', title : '', thumb : '', url : ''}
+            slide_interval: 5000, // Length between transitions
+            transition: 1,
+            transition_speed: 900, // Speed of transition
+            slide_links: '0',
+            slides: [
+                { image: 'images/slider/001.jpg', title: '', thumb: '', url: '' },
+                { image: 'images/slider/002.jpg', title: '', thumb: '', url: '' }
             ]
         });
     });
@@ -311,7 +314,7 @@ jQuery(document).ready(function () {
 /* ==========================================================================
 Window Resize
 ========================================================================== */
-jQuery(window).resize(function () {
+jQuery(window).resize(function() {
 
     'use strict';
 
@@ -320,7 +323,7 @@ jQuery(window).resize(function () {
     /* ==============================================
     Refresh Data Spy
     =============================================== */
-    jQuery('[data-spy="scroll"]').each(function () {
+    jQuery('[data-spy="scroll"]').each(function() {
         var $spy = jQuery(this).scrollspy('refresh');
     });
 
@@ -329,8 +332,8 @@ jQuery(window).resize(function () {
     Home Section Height
     =============================================== */
     containerMargin = ((jQuery(window).height() - jQuery('#home-section-container').height()) / 2) + 50;
-    jQuery('#home-section').css({height: jQuery(window).height()});
-    jQuery('#home-section-container').css({marginTop: containerMargin});
+    jQuery('#home-section').css({ height: jQuery(window).height() });
+    jQuery('#home-section-container').css({ marginTop: containerMargin });
 
 
 });
@@ -341,7 +344,7 @@ jQuery(window).resize(function () {
 /* ==========================================================================
 Window Scroll
 ========================================================================== */
-jQuery(window).scroll(function () {
+jQuery(window).scroll(function() {
 
     'use strict';
 
@@ -355,8 +358,8 @@ jQuery(window).scroll(function () {
     enable_opacity = true; /* Change it to false to disable the Home opacity */
     if (enable_opacity === true) {
         home_height = jQuery('#home-section').height();
-        jQuery('#home-section').css({opacity: (1 - current_position / home_height * 1.2)});
-        jQuery('.image-slider #supersized').css({opacity: (1 - current_position / home_height * 1.2)});
+        jQuery('#home-section').css({ opacity: (1 - current_position / home_height * 1.2) });
+        jQuery('.image-slider #supersized').css({ opacity: (1 - current_position / home_height * 1.2) });
     }
 
 
@@ -378,7 +381,7 @@ jQuery(window).scroll(function () {
 /* ==========================================================================
 Window Load
 ========================================================================== */
-jQuery(window).load(function () {
+jQuery(window).load(function() {
 
     'use strict';
 
@@ -391,8 +394,8 @@ jQuery(window).load(function () {
 
     function hideLoader() {
         var loadingLoader = jQuery('#loader');
-        loadingLoader.css({height: 0});
-        jQuery('#loader-container').css({display: 'none'});
+        loadingLoader.css({ height: 0 });
+        jQuery('#loader-container').css({ display: 'none' });
     }
     hideLoader();
 
@@ -401,8 +404,8 @@ jQuery(window).load(function () {
     Home Section Height
     =============================================== */
     containerMargin = ((jQuery(window).height() - jQuery('#home-section-container').height()) / 2) + 50;
-    jQuery('#home-section').css({height: jQuery(window).height()});
-    jQuery('#home-section-container').css({marginTop: containerMargin});
+    jQuery('#home-section').css({ height: jQuery(window).height() });
+    jQuery('#home-section-container').css({ marginTop: containerMargin });
 
 
     /* ==============================================
@@ -411,7 +414,7 @@ jQuery(window).load(function () {
     notification_on = false; /* Change it to false if you want to disable the Notification Message */
     if (notification_on === true) {
         if (!jQuery('body').hasClass('single-project')) {
-            setTimeout(function () {
+            setTimeout(function() {
                 notification = new NotificationFx({
                     ttl: 7000,
                     type: 'notice',
@@ -441,7 +444,7 @@ jQuery(window).load(function () {
             }
         });
     }
-    jQuery('.portfoliofilter a').on('click', function (e) {
+    jQuery('.portfoliofilter a').on('click', function(e) {
         jQuery('.portfoliofilter a').removeClass('selected');
         jQuery(this).addClass('selected');
         var selector = jQuery(this).attr('data-filter');
@@ -460,35 +463,35 @@ jQuery(window).load(function () {
     /* ==========================================================================
     Dribbble Feed
     ========================================================================== */
-    jQuery.jribbble.getShotsByPlayerId('NestoLab', function (playerShots) {
-        var html = [];
-        jQuery.each(playerShots.shots, function (i, shot) {
-            html.push('<li><a href="' + shot.url + '" title="' + shot.title + '" target="_blank"><img src="' + shot.image_url + '" alt="' + shot.title + '"></a></li>');
-        });
-        jQuery('.widget-dribbble ul').html(html.join(''));
-    }, {page: 1, per_page: 1});
+    // jQuery.jribbble.getShotsByPlayerId('NestoLab', function (playerShots) {
+    //     var html = [];
+    //     jQuery.each(playerShots.shots, function (i, shot) {
+    //         html.push('<li><a href="' + shot.url + '" title="' + shot.title + '" target="_blank"><img src="' + shot.image_url + '" alt="' + shot.title + '"></a></li>');
+    //     });
+    //     jQuery('.widget-dribbble ul').html(html.join(''));
+    // }, {page: 1, per_page: 1});
 
 
     /* ==========================================================================
     Twitter Feed
     ========================================================================== */
-    jQuery('.tweetfeed .tweet').twittie({
-        template: '<a href="http://twitter.com/NestoLab" title="NestoLab" target="_blank"><i class="fa fa-twitter"></i></a> {{tweet}}',
-        count: 1,
-        hideReplies: true
-    });
+    // jQuery('.tweetfeed .tweet').twittie({
+    //     template: '<a href="http://twitter.com/NestoLab" title="NestoLab" target="_blank"><i class="fa fa-twitter"></i></a> {{tweet}}',
+    //     count: 1,
+    //     hideReplies: true
+    // });
 
 
     /* ==========================================================================
     Flickr Feed
     ========================================================================== */
-    jQuery('#flickr-feed').jflickrfeed({
-        limit: 9,
-        qstrings: {
-            id: '25461271@N07'
-        },
-        itemTemplate: '<li>' + '<a href="{{image_b}}" class="fancybox" data-fancybox-group="gall1" title="{{title}}"><img src="{{image_s}}" alt="{{title}}" /></a>' + '</li>'
-    });
+    // jQuery('#flickr-feed').jflickrfeed({
+    //     limit: 9,
+    //     qstrings: {
+    //         id: '25461271@N07'
+    //     },
+    //     itemTemplate: '<li>' + '<a href="{{image_b}}" class="fancybox" data-fancybox-group="gall1" title="{{title}}"><img src="{{image_s}}" alt="{{title}}" /></a>' + '</li>'
+    // });
 
 
     /* ==========================================================================
