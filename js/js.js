@@ -63,7 +63,7 @@ jQuery(document).ready(function() {
     Personal Title
     ========================================================================== */
     jQuery('#personal-typed').typed({
-        strings: ['UI & Front-end Developer', '13 year\'s of experience in web industry', 'HTML/HTML5, CSS/CSS3, jQuery / JavaScript with expertise'],
+        strings: ['UI & Front-end Developer', '13 year\'s of experience in web industry', 'HTML5, CSS3, jQuery & JavaScript Expert'],
         loop: true,
         typeSpeed: 30,
         backDelay: 2000,
